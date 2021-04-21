@@ -1,7 +1,7 @@
 "# wipeout" 
 
 This is a surf forecast. 
-With a surf forecast you can predict what the surf conditions will be like on the next day. 
+With a surf forecast you can predict what the surf conditions will be like the next day. 
 Relevant data is displayed, such as the swell direction, wave size and tides.
 A planned feature is the possibility to save your favourite surf spots. 
 
