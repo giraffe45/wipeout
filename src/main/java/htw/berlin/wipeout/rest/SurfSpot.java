@@ -7,17 +7,18 @@ import javax.persistence.*;
 @Table
 public class SurfSpot {
     @Id
-    @SequenceGenerator(
-            name = "surfspot_sequence",
-            sequenceName = "surfspot_sequence",
-            allocationSize = 1
-    )
+    //@SequenceGenerator(
+    //        name = "surfspot_sequence",
+    //        sequenceName = "surfspot_sequence",
+    //        allocationSize = 1
+    //)
 
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "surfspot_sequence"
-    )
+    //@GeneratedValue(
+    //        strategy = GenerationType.SEQUENCE,
+    //        generator = "surfspot_sequence"
+    //)
     private int id;
+    @Column
     private String name;
 
     public SurfSpot(){

@@ -46,6 +46,6 @@ public class SurfSpotService {
         return ResponseEntity.ok().build();
     }
     public List<SurfSpot> getSurfSpot() {
-        return surfSpotRepository.findAll();
+        return (List<SurfSpot>) surfSpotRepository.findAll();
     }
 }
