@@ -23,6 +23,6 @@ public class SurfSpotController {
   //  public SurfSpot surfSpot(@RequestParam(value = "name", defaultValue = "Pipe") String name){
       //  return new SurfSpot(String.format("You're surfing at %s",name));
     public List<SurfSpot> getSurfSpot(){
-    return surfSpotService.getSurfSpot();
+        return surfSpotService.getSurfSpot();
     }
 }
