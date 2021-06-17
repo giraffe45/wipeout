@@ -4,9 +4,8 @@ import javax.persistence.Id;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "surf_spot")
 public class SurfSpot {
-    @Id
     //@SequenceGenerator(
     //        name = "surfspot_sequence",
     //        sequenceName = "surfspot_sequence",
@@ -17,9 +16,18 @@ public class SurfSpot {
     //        strategy = GenerationType.SEQUENCE,
     //        generator = "surfspot_sequence"
     //)
-    private int id;
-    @Column
+    @Id
+    @Column(name = "id")
+    private Integer id=1;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="lat")
+    private Float lat;
+
+    @Column(name="lng")
+    private Float lng;
 
     public SurfSpot(){
     }
@@ -29,12 +37,28 @@ public class SurfSpot {
         this.name = name;
     }
 
+    public SurfSpot(String name, float lat, float lng) {
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     public SurfSpot(String name) {
         id++;
         this.name = name;
     }
 
-    public void setId(int id) {
+    public Float getLat() {
+        return lat;
+    }
+
+
+    public Float getLng() {
+        return lng;
+    }
+
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -42,7 +66,7 @@ public class SurfSpot {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

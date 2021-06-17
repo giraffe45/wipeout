@@ -20,17 +20,17 @@ public class SurfSpotConfig {
     CommandLineRunner commandLineRunner(SurfSpotRepository repository){
         return args -> {
             SurfSpot playa_del_socorro = new SurfSpot(
-                            "Playa del Socorro"
+                            "Playa del Socorro",1.0f,1.0f
             );
             SurfSpot playa_san_juan = new SurfSpot(
-                    "Playa San Juan"
+                    "Playa San Juan",1.0f,1.0f
             );
 
             SurfSpot punta_del_hidalgo = new SurfSpot(
-                    "Punta del Hidalgo"
+                    "Punta del Hidalgo",1.0f,1.0f
             );
             SurfSpot poris_de_abona = new SurfSpot(
-                    "Porís de Abona"
+                    "Porís de Abona",1.0f,1.0f
             );
 
 
