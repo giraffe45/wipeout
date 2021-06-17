@@ -29,23 +29,15 @@ public class SurfSpot {
     @Column(name="lng")
     private Float lng;
 
-    public SurfSpot(){
-    }
-
-    public SurfSpot(String name, int id){
-        this.id = id;
-        this.name = name;
-    }
-
     public SurfSpot(String name, float lat, float lng) {
+        id++;
         this.name = name;
         this.lat = lat;
         this.lng = lng;
     }
 
-    public SurfSpot(String name) {
+    public SurfSpot() {
         id++;
-        this.name = name;
     }
 
     public Float getLat() {
@@ -79,6 +71,8 @@ public class SurfSpot {
         return "SurfSpot{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", lat=" + lat +
+                ", lng=" + lng +
                 '}';
     }
 }

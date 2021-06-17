@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" lang="en">
+<head>
+    <title>Save your favourite Surfspots!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h2>You've created a Surfspot!</h2>
+<p th:text="'name: ' + ${surfspot.name}"></p>
+<p th:text="'latitude: ' + ${surfspot.lat}"></p>
+<p th:text="'longitude: ' + ${surfspot.lng}"></p>
+<a href="/listsurfspots">See all Surfspots</a>
+</body>
+</html>

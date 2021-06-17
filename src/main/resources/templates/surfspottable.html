@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" lang="en">
+<head>
+    <title>These are your favourite Surfspots!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h2>Here are all Surfspot!</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>L ongitude</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${surfspots.isEmpty()}">
+        <td colspan="2">No Surfspots available</td>
+    </tr>
+    <tr th:each="surfspot: ${surfspots}">
+        <td><span th:text="${surfspot.name}">Name</span><span th:text="${surfspot.lat}">Latitude</span><span
+                th:text="${surfspot.lng}">Longitude</span></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/createsurfspot">Create more surfspots</a>
+</body>
+</html>
