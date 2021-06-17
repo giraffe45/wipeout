@@ -12,5 +12,7 @@ import java.util.List;
 public interface SurfSpotRepository extends CrudRepository<SurfSpot, Long> {
     List<SurfSpot> findByName(String name);
     SurfSpot findById(long id);
+    SurfSpot save(SurfSpot surfSpot);
+    void deleteById(long id);
 
 }

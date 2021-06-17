@@ -48,4 +48,13 @@ public class SurfSpotService {
     public List<SurfSpot> getSurfSpot() {
         return (List<SurfSpot>) surfSpotRepository.findAll();
     }
+
+    public SurfSpot saveSurfspot(SurfSpot surfSpot){
+        return surfSpotRepository.save(surfSpot);
+    }
+
+    public void deleteByID(long id){
+        surfSpotRepository.deleteById(id);
+    }
+
 }
