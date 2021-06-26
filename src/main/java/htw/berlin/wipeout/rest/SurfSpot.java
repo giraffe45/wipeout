@@ -1,78 +1,78 @@
 package htw.berlin.wipeout.rest;
 
-import javax.persistence.Id;
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "surf_spot")
+@Table
 public class SurfSpot {
-    //@SequenceGenerator(
-    //        name = "surfspot_sequence",
-    //        sequenceName = "surfspot_sequence",
-    //        allocationSize = 1
-    //)
-
-    //@GeneratedValue(
-    //        strategy = GenerationType.SEQUENCE,
-    //        generator = "surfspot_sequence"
-    //)
     @Id
-    @Column(name = "id")
-    private Integer id=1;
-
-    @Column(name="name")
+    @SequenceGenerator(
+            name = "address_sequence",
+            sequenceName = "address_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator =  "address_sequence"
+    )
+    private Long id;
     private String name;
 
-    @Column(name="lat")
-    private Float lat;
+    private String surfSpotAddress;
 
-    @Column(name="lng")
-    private Float lng;
+    public SurfSpot(){
 
-    public SurfSpot(String name, float lat, float lng) {
-        id++;
-        this.name = name;
-        this.lat = lat;
-        this.lng = lng;
     }
 
-    public SurfSpot() {
-        id++;
-    }
-
-    public Float getLat() {
-        return lat;
-    }
-
-
-    public Float getLng() {
-        return lng;
-    }
-
-
-    public void setId(Integer id) {
+    public SurfSpot(Long id,String name,String surfSpotAddress) {
         this.id = id;
-    }
-
-    public void setName(String name) {
         this.name = name;
+
+        this.surfSpotAddress = surfSpotAddress;
+
     }
 
-    public Integer getId() {
+    public SurfSpot(String name,String surfSpotAddress) {
+
+        this.name = name;
+        this.surfSpotAddress = surfSpotAddress;
+    }
+
+
+
+
+
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurfSpotAddress() {
+        return surfSpotAddress;
+    }
+
+    public void setSurfSpotAddress(String surfSpotAddress) {
+        this.surfSpotAddress = surfSpotAddress;
+    }
+
     @Override
     public String toString() {
-        return "SurfSpot{" +
+        return "Address{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", lat=" + lat +
-                ", lng=" + lng +
+                ", homeAddress='" + surfSpotAddress +
                 '}';
     }
 }

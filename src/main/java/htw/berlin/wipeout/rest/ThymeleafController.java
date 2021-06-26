@@ -1,5 +1,6 @@
 package htw.berlin.wipeout.rest;
 
+
 import htw.berlin.wipeout.config.Endpoints;
 import htw.berlin.wipeout.config.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +23,12 @@ public class ThymeleafController {
     //TODO und er bleibt auf createsurfspot Seite
     @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET, RequestMethod.POST})
     public String submitSurfspot(@ModelAttribute SurfSpot surfSpot, Model model){
-        surfSpotService.saveSurfspot(surfSpot);
+        surfSpotService.addNewSurfSpot(surfSpot);
         model.addAttribute("surfspot", surfSpot);
         return "createsurfspot";
     }
 
-    @GetMapping(path="/listsurfspots")
+    @GetMapping(path="/surfspottable")
     public String surfspotsTable(Model model){
         List<SurfSpot> surfspots = surfSpotService.getSurfSpot();
         model.addAttribute("surfspots", surfspots);
@@ -38,3 +39,4 @@ public class ThymeleafController {
         return new ModelAndView(ViewNames.VUEDYNAMIC);
     }
 }
+

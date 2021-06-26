@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
 @RestController
 @RequestMapping
 public class DBController {
@@ -32,4 +32,4 @@ public class DBController {
         long surfSpotID =Long.parseLong(id);
         surfSpotService.deleteByID(surfSpotID);
     }
-}
+}**/
