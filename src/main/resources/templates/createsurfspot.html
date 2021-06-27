@@ -7,13 +7,10 @@
 <body>
 <h2>Create a Surfspot</h2>
 <form action="#" th:action="@{/createsurfspot}" th:object="${surfspot}" method="post">
-    <p>Id: <label>
-        <input type="text" th:field="*{id}" />
-    </label></p>
-    <p>Name: <label>
+    <p>Name of the surfspot: <label>
         <input type="text" th:field="*{name}" />
     </label></p>
-    <p>surfSpotAddress: <label>
+    <p>Address of the Surfspot: <label>
         <input type="text" th:field="*{surfSpotAddress}" />
     </label></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset"/></p>

@@ -27,6 +27,10 @@ public class SurfSpotService {
         return surfSpotRepository.findAll();
     }
 
+    public List<SurfSpot> findAll() {
+        return surfSpotRepository.findAll();
+    }
+
     /**public List<Address> listAll() {
      return addressRepository.findAll();
      }**/
@@ -45,6 +49,8 @@ public class SurfSpotService {
 
         surfSpotRepository.deleteById(surfSpotId);
     }
+
+
 
 
 
@@ -76,9 +82,7 @@ public class SurfSpotService {
      //TODO return entity.getBody() um JSON Body über API zurückzugeben (zum Testen)
      return ResponseEntity.ok().build();
      }
-     public List<SurfSpot> getSurfSpot() {
-     return (List<SurfSpot>) surfSpotRepository.findAll();
-     }
+
 
      public SurfSpot saveSurfspot(SurfSpot surfSpot){
      return surfSpotRepository.save(surfSpot);

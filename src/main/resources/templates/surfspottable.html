@@ -18,10 +18,10 @@
         <tr th:if="${surfspots.isEmpty()}">
             <td colspan="2">No Surfspots available</td>
         </tr>
-        <tr th:each="surfspot : ${allSurfSpots}">
+        <tr th:each="surfspot : ${surfspots}">
             <th scope="row">1</th>
-            <td><span th:text="${surfSpot.name}">Name</span>
-                <span th:text="${surfSpot.surfSpotAddress}">SurfSpotAddress</span>
+            <td><span th:text="${surfspot.name}">Name</span>
+                <span th:text="${surfspot.surfSpotAddress}">Address of the Surfspot </span>
             </td>
         </tr>
         </tbody>
