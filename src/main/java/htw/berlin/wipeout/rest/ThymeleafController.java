@@ -21,13 +21,19 @@ public class ThymeleafController {
     @Autowired
     private SurfSpotService surfSpotService;
 
-    //TODO und er bleibt auf createsurfspot Seite
     @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET})
+    public String surfSpotForm(Model model){
+        model.addAttribute("surfspot", new SurfSpot());
+        return "createsurfspot";
+    }
+
+    //TODO und er bleibt auf createsurfspot Seite
+    @RequestMapping(value="/createsurfspot", method = {RequestMethod.POST})
     public String submitSurfspot(@AuthenticationPrincipal OidcUser user, @ModelAttribute SurfSpot surfSpot, Model model){
         surfSpot.setOwner(user.getEmail());
         surfSpotService.addNewSurfSpot(surfSpot);
         model.addAttribute("surfspot", surfSpot);
-        return "createsurfspot";
+        return "surfspotresult";
     }
 
 

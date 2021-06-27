@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org" lang="en">
+<html th:replace="~{layout :: layout (~{::body})}" xmlns:th="https://thymeleaf.org" lang="en">
 <head>
-    <title>Save your favourite Surfspots!</title>
+    <title>You've created a Surfspot!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 <h2>You've created a Surfspot!</h2>
-<p th:text="'name: ' + ${surfspot.name}"></p>
-<p th:text="'surfSpotAddress: ' + ${surfspot.surfSpotAddress}"></p>
-<a href="/listsurfspots">See all Surfspots</a>
+<p th:text="'Name: ' + ${surfspot.name}"></p>
+<p th:text="'Address of the Surfspot: ' + ${surfspot.surfSpotAddress}"></p>
+<a href="/surfspottable">See all Surfspots</a>
+<a href="/createsurfspot">Create a new Surfspot</a>
 </body>
 </html>
