@@ -16,5 +16,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addViewController(Endpoints.SURFSPOTTABLE).setViewName(ViewNames.SURFSPOTTABLE);
         registry.addViewController(Endpoints.LOGIN).setViewName(ViewNames.LOGIN);
         registry.addViewController(Endpoints.CREATESURFSPOT).setViewName(ViewNames.CREATESURFSPOT);
+        registry.addViewController(Endpoints.VUEDYNAMIC).setViewName(ViewNames.VUEDYNAMIC);
     }
 }
