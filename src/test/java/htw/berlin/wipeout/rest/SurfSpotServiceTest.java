@@ -1,4 +1,4 @@
-package htw.berlin.wipeout;
+package htw.berlin.wipeout.rest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

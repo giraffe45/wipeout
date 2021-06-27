@@ -22,7 +22,7 @@ public class ThymeleafController {
     private SurfSpotService surfSpotService;
 
     //TODO und er bleibt auf createsurfspot Seite
-    @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET})
     public String submitSurfspot(@AuthenticationPrincipal OidcUser user, @ModelAttribute SurfSpot surfSpot, Model model){
         surfSpot.setOwner(user.getEmail());
         surfSpotService.addNewSurfSpot(surfSpot);
