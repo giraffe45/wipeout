@@ -27,7 +27,7 @@ public class ThymeleafController {
         return "createsurfspot";
     }
 
-    //TODO und er bleibt auf createsurfspot Seite
+
     @RequestMapping(value="/createsurfspot", method = {RequestMethod.POST})
     public String submitSurfspot(@AuthenticationPrincipal OidcUser user, @ModelAttribute SurfSpot surfSpot, Model model){
         surfSpot.setOwner(user.getEmail());
@@ -47,5 +47,6 @@ public class ThymeleafController {
     public ModelAndView showVueDynamic(){
         return new ModelAndView(ViewNames.VUEDYNAMIC);
     }
+
 }
 

@@ -39,6 +39,8 @@ public class SurfSpotService {
         return surfspot;
     }
 
+
+
     /**public List<Address> listAll() {
      return addressRepository.findAll();
      }**/

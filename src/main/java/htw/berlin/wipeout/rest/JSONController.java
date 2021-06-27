@@ -2,6 +2,8 @@ package htw.berlin.wipeout.rest;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/surfSpot")
-public class SurfSpotController {
+public class JSONController {
 
     private  SurfSpotService surfSpotService;
 
     @Autowired
-    public SurfSpotController(SurfSpotService surfSpotService) {
+    public JSONController(SurfSpotService surfSpotService) {
         this.surfSpotService =  surfSpotService;
     }
 
     @GetMapping
-    public List<SurfSpot> getSurfSpot() {
-        return surfSpotService.getSurfSpot();
+    public List<SurfSpot> getSurfSpot(@AuthenticationPrincipal OidcUser user) {
+        return surfSpotService.findAll(user.getEmail());
     }
 
     @PostMapping
