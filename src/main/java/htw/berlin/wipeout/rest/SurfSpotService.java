@@ -60,6 +60,10 @@ public class SurfSpotService {
         surfSpotRepository.deleteById(surfSpotId);
     }
 
+    public SurfSpot save(SurfSpot surfSpot) {
+        return surfSpotRepository.save(surfSpot);
+    }
+
 
 
 

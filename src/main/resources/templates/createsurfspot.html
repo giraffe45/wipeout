@@ -14,6 +14,13 @@
         <input type="text" th:field="*{surfSpotAddress}" />
     </label></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset"/></p>
+    <p><button id="halloScript">Click mich</button></p>
+    <script>
+        var halloScript = document.getElementById("halloScript");
+        halloScript.onclick = function () {
+            alert ("Viel Spaß!");
+        }
+    </script>
 </form>
 </body>
 </html>

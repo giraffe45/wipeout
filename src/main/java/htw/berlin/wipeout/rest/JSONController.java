@@ -34,4 +34,17 @@ public class JSONController {
     public void deleteSurfSpot(@PathVariable("surfSpotId")Long surfSpotId){
         surfSpotService.deleteSurfSpot(surfSpotId);
     }
+
+
+    //VUE
+    @GetMapping("/surfspots")
+    public List<SurfSpot> allProducts(@AuthenticationPrincipal OidcUser user) {
+        return surfSpotService.findAll(user.getEmail());
+    }
+
+    @PostMapping("/surfspots")
+    public SurfSpot createProduct(@AuthenticationPrincipal OidcUser user, @RequestBody SurfSpot surfSpot) {
+        surfSpot.setOwner(user.getEmail());
+        return surfSpotService.save(surfSpot);
+    }
 }
