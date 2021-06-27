@@ -24,7 +24,7 @@ public class ThymeleafController {
     //TODO Hier übernimmt er lat & lng als EIngabe nicht in die Klasse
     //TODO und er bleibt auf createsurfspot Seite
     @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET, RequestMethod.POST})
-    public String submitSurfspot(@ModelAttribute SurfSpot surfSpot, Model model){
+    public String submitSurfspot(@AuthenticationPrincipal OidcUser user, @ModelAttribute SurfSpot surfSpot, Model model){
         surfSpotService.addNewSurfSpot(surfSpot);
         model.addAttribute("surfspot", surfSpot);
         return "createsurfspot";

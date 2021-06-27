@@ -18,8 +18,8 @@ public class SurfSpot {
     )
     private Long id;
     private String name;
-
     private String surfSpotAddress;
+    private String owner;
 
     public SurfSpot(){
 
@@ -33,7 +33,14 @@ public class SurfSpot {
 
     }
 
-    public SurfSpot(String name,String surfSpotAddress) {
+    public SurfSpot(Long id, String name, String surfSpotAddress, String owner) {
+        this.id = id;
+        this.name = name;
+        this.surfSpotAddress = surfSpotAddress;
+        this.owner = owner;
+    }
+
+    public SurfSpot(String name, String surfSpotAddress) {
 
         this.name = name;
         this.surfSpotAddress = surfSpotAddress;
@@ -67,12 +74,21 @@ public class SurfSpot {
         this.surfSpotAddress = surfSpotAddress;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
     @Override
     public String toString() {
-        return "Address{" +
+        return "SurfSpot{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", homeAddress='" + surfSpotAddress +
+                ", surfSpotAddress='" + surfSpotAddress + '\'' +
+                ", owner='" + owner + '\'' +
                 '}';
     }
 }
