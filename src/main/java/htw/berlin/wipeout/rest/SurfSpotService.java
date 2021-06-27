@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,8 +28,15 @@ public class SurfSpotService {
         return surfSpotRepository.findAll();
     }
 
-    public List<SurfSpot> findAll() {
-        return surfSpotRepository.findAll();
+    public List<SurfSpot> findAll(String userEmail) {
+        var iterator = surfSpotRepository.findAll();
+        var surfspot=new ArrayList<SurfSpot>();
+        for(SurfSpot s: iterator){
+            if(s.getOwner()!=null&&s.getOwner().equals(userEmail)){
+                surfspot.add(s);
+            }
+        }
+        return surfspot;
     }
 
     /**public List<Address> listAll() {

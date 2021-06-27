@@ -21,10 +21,10 @@ public class ThymeleafController {
     @Autowired
     private SurfSpotService surfSpotService;
 
-    //TODO Hier übernimmt er lat & lng als EIngabe nicht in die Klasse
     //TODO und er bleibt auf createsurfspot Seite
     @RequestMapping(value="/createsurfspot", method = {RequestMethod.GET, RequestMethod.POST})
     public String submitSurfspot(@AuthenticationPrincipal OidcUser user, @ModelAttribute SurfSpot surfSpot, Model model){
+        surfSpot.setOwner(user.getEmail());
         surfSpotService.addNewSurfSpot(surfSpot);
         model.addAttribute("surfspot", surfSpot);
         return "createsurfspot";
@@ -32,8 +32,8 @@ public class ThymeleafController {
 
 
     @GetMapping(path="/surfspottable")
-    public String surfspotsTable(Model model){
-        List<SurfSpot> surfspots = surfSpotService.getSurfSpot();
+    public String surfspotsTable(@AuthenticationPrincipal OidcUser user,Model model){
+        List<SurfSpot> surfspots = surfSpotService.findAll(user.getEmail());
         model.addAttribute("surfspots", surfspots);
         return "surfspottable";
     }
