@@ -3,10 +3,10 @@
 <head>
   <title>Create Surfspots!</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <script src="#" th:src="@{dynamic-form.js}" defer></script>
   <script src="https://unpkg.com/vue@next" defer></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://github.com/giraffe45/wipeout/blob/main/src/main/resources/static/dynamic.js"></script>
+  <script type="module" src="#" th:src="@{src/main/resources/dynamic-form.js}" defer></script>
+  <script type="module" src="#" th:src="@{/main.js}" defer></script>
 </head>
 <body>
 <h2>Create a Surfspot</h2>

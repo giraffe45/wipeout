@@ -1,4 +1,5 @@
-app.component('dynamic-form', {
+export default {
+    props: ['title'],
     template: `
     <div>
       <input v-model="nameField" placeholder="Name" type="text" ref="nameInput">
@@ -62,5 +63,4 @@ app.component('dynamic-form', {
     mounted: function() {
         this.loadProducts();
     }
-});
-app.mount('#dynamic-form');
+}

@@ -17,11 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // public pages
                 .antMatchers(
                         HttpMethod.GET,
-                        Endpoints.INDEX,
-                        //Endpoints.SURFSPOTTABLE,
-                        Endpoints.LOGIN,
-                        Endpoints.CREATESURFSPOT,
-                        Endpoints.VUEDYNAMIC
+                        Endpoints.INDEX
                 ).permitAll()
                 // static resources
                 .antMatchers(
